@@ -61,9 +61,24 @@ Expected OUTPUT for this sample:
 
  */
 
-function getMoviesFreshness(movies) {
-}
+const film = [{name: 'Crazy Rich Asians',rating: 93},{name: 'Skyscraper',rating: 46},{name: 'Leave No Trace',rating: 100},{name: 'White Boy Rick',rating: 60}]
 
+function getMoviesFreshness(movies) {
+  return movies.map((movie) => {
+    let label = movies.push(movie.label)
+      if (movie["rating"] < 60) {
+        movie.label = "rotten"
+        return movie
+      } else if (movie["rating"] >=60 && movie["rating"] <= 75){
+        movie.label = "fresh"
+        return movie
+      } else {
+        movie.label = "certified fresh"
+        return movie
+      }
+  })
+}
+console.log(getMoviesFreshness(film))
 
 
 // DON'T TOUCH THIS!

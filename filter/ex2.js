@@ -26,7 +26,15 @@ Expected OUTPUT for this sample:
 */
 
 function keepStarks(names) {
+  return names.filter((name) => {
+    if (name.endsWith("Stark")){
+      return name
+    } else {
+      return false
+    }
+  })
 }
-
+// const array = ['Bran Stark','Cersei Lannister','Sandor Clegane','Arya Stark','Yara Greyjoy','Sansa Stark']
+// console.log(keepStarks(array))
 // DON'T TOUCH THIS!
 module.exports = keepStarks;
